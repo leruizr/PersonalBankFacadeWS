@@ -1,0 +1,32 @@
+BROKER SCHEMA co.com.personalbank.facade
+
+
+CREATE COMPUTE MODULE PersonalBankFcdRq_RoutingMessage
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--1. Se deben crear cabeceras MQ
+		
+		CREATE FIELD OutputRoot.Properties;
+		CREATE FIELD OutputRoot.MQMD;
+		CREATE FIELD OutputRoot.MQRFH2;
+		
+		--1.1. Copiar mensaje XML
+		SET OutputRoot.XMLNSC = InputRoot.XMLNSC;
+		
+		--2. Eliminar cabeceras HTTP
+		
+		
+		--3. Obtener datos para respuesta
+		DECLARE operation, replyIdentifier CHARACTER '';
+		SET operation = InputLocalEnvironment.Destination.RouterList.DestinationData.labelName;
+		SET replyIdentifier = InputLocalEnvironment.Destination.SOAP.Reply.ReplyIdentifier;
+		
+		--4. Enrutan con base en la operacion
+		IF operation = 'getAllCustomer' THEN
+			RETURN TRUE;
+		ELSE
+			PROPAGATE TO TERMINAL 'out1' DELETE NONE;
+			RETURN FALSE;
+		END IF;		
+	END;
+END MODULE;

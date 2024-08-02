@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.personabank.com/services/accounts/xsd/customer" xmlns:this="http://www.personabank.com/services/accounts/xsd/customer">
+    <xsd:complexType name="CustomerType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="type_id" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="id" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="names" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="last_names" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="addresss" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

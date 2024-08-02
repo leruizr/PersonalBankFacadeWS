@@ -1,0 +1,15 @@
+BROKER SCHEMA co.com.personalbank.facade
+
+
+CREATE COMPUTE MODULE PersonalBankResp_CopyMessage
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--Llamar procedimiento de copia de todo el mensaje
+		CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

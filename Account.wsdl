@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Account" targetNamespace="http://www.personabank.com/services/accounts/wsdl/Account/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.personabank.com/services/accounts/wsdl/Account/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="Account_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="AccountSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+          <xsd:schema targetNamespace="http://www.personabank.com/services/accounts/wsdl/Account/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:pref="http://www.personabank.com/services/accounts/xsd/transactionRs" xmlns:pref1="http://www.personabank.com/services/accounts/xsd/customer" xmlns:pref2="http://www.personabank.com/services/accounts/xsd/account" xmlns:this="http://www.personabank.com/services/accounts/xsd/transactionRq">
+<xsd:include schemaLocation="Account_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="getAllCustomerRequest">
+    <wsdl:part element="tns:getAllCustomerRq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAllCustomerResponse">
+    <wsdl:part element="tns:getAllCustomerRs" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountByIdCustomerRequest">
+  	<wsdl:part element="tns:getAccountByIdCustomerRq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountByIdCustomerResponse">
+  	<wsdl:part element="tns:getAccountByIdCustomerRs" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Account">
+    <wsdl:operation name="getAllCustomer">
+      <wsdl:input message="tns:getAllCustomerRequest"/>
+      <wsdl:output message="tns:getAllCustomerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountByIdCustomer">
+    	<wsdl:input message="tns:getAccountByIdCustomerRequest"/>
+    	<wsdl:output message="tns:getAccountByIdCustomerResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountSOAP" type="tns:Account">
+  	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  	<wsdl:operation name="getAllCustomer">
+  		<soap:operation soapAction="http://www.personabank.com/services/accounts/wsdl/Account/getAllCustomer"/>
+  		<wsdl:input>
+  			<soap:body use="literal"/>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal"/>
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAccountByIdCustomer">
+  		<soap:operation soapAction="http://www.personabank.com/services/accounts/wsdl/Account/getAccountByIdCustomer"/>
+  		<wsdl:input>
+  			<soap:body use="literal"/>
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal"/>
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Account">
+    <wsdl:port binding="tns:AccountSOAP" name="AccountSOAP">
+      <soap:address location="http://www.personabank.com/services/accounts/wsdl/Account/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

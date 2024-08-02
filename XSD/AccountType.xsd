@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.personabank.com/services/accounts/xsd/account" xmlns:this="http://www.personabank.com/services/accounts/xsd/account">
+    <xsd:complexType name="AccountType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="type" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="number" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="balance" type="xsd:double">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="personal_name" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

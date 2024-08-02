@@ -1,0 +1,30 @@
+
+
+Importing file: C:\Users\USER\IBM\IIBT10\workspace\WSDL\Account\Account.wsdl
+
+The WSDL import will proceed with bindings AccountSOAP.
+Creating wsdl schema document for file:///C:/Users/USER/IBM/IIBT10/workspace/WSDL/Account/Account.wsdl.
+Parsing wsdl binding {http://www.personabank.com/services/accounts/wsdl/Account/}AccountSOAP.
+Parsing wsdl binding input getAllCustomer.
+Parsing wsdl binding output getAllCustomer.
+Parsing wsdl binding input getAccountByIdCustomer.
+Parsing wsdl binding output getAccountByIdCustomer.
+Processing doc style for operation getAllCustomer.
+Processing doc style for operation getAccountByIdCustomer.
+Populating WSDL schema Account.xsd.
+Creating file Account.xsd in the workspace.
+Creating file Account_InlineSchema1.xsd in the workspace.
+Creating file /AccountFacadeWS/XSD/TransactionRqType.xsd in the workspace.
+Creating file /AccountFacadeWS/XSD/TransactionRsType.xsd in the workspace.
+Creating file /AccountFacadeWS/XSD/StatusType.xsd in the workspace.
+Creating file /AccountFacadeWS/XSD/CustomerType.xsd in the workspace.
+Creating file /AccountFacadeWS/XSD/AccountType.xsd in the workspace.
+Copying source WSDL Account.wsdl to Account.wsdl.
+
+Elapsed time processing this message definition file: 0.366 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

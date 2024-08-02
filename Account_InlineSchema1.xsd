@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.personabank.com/services/accounts/wsdl/Account/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:pref="http://www.personabank.com/services/accounts/xsd/transactionRs" xmlns:pref1="http://www.personabank.com/services/accounts/xsd/customer" xmlns:pref2="http://www.personabank.com/services/accounts/xsd/account" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://www.personabank.com/services/accounts/xsd/transactionRq" xmlns:tns="http://www.personabank.com/services/accounts/wsdl/Account/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+
+    	<xsd:import namespace="http://www.personabank.com/services/accounts/xsd/transactionRq" schemaLocation="XSD/TransactionRqType.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.personabank.com/services/accounts/xsd/transactionRs" schemaLocation="XSD/TransactionRsType.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.personabank.com/services/accounts/xsd/customer" schemaLocation="XSD/CustomerType.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.personabank.com/services/accounts/xsd/account" schemaLocation="XSD/AccountType.xsd"/>
+    	<xsd:element ibmSchExtn:docRoot="true" name="getAllCustomerRq" type="tns:GetAllCustomerRqType">
+    	</xsd:element>
+    	<xsd:element ibmSchExtn:docRoot="true" name="getAllCustomerRs" type="tns:GetAllCustomerRsType">
+    	</xsd:element>
+
+    	<xsd:complexType name="GetAllCustomerRqType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="1" minOccurs="1" name="transactionRq" type="this:TransactionRqType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="GetAllCustomerRsType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="1" minOccurs="1" name="transactionRs" type="pref:TransactionRsType">
+    			</xsd:element>
+    			<xsd:element maxOccurs="1" minOccurs="0" name="lstCustomer" type="tns:LstCustomerType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="LstCustomerType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="unbounded" minOccurs="0" name="customer" type="pref1:CustomerType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+
+    	<xsd:element ibmSchExtn:docRoot="true" name="getAccountByIdCustomerRq" type="tns:getAccountByIdCustomerRqType">
+    	</xsd:element>
+    	<xsd:element ibmSchExtn:docRoot="true" name="getAccountByIdCustomerRs" type="tns:getAccountByIdCustomerRsType">
+    	</xsd:element>
+
+    	<xsd:complexType name="getAccountByIdCustomerRqType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="1" minOccurs="1" name="transactionRq" type="this:TransactionRqType">
+    			</xsd:element>
+    			<xsd:element maxOccurs="1" minOccurs="1" name="customer" type="tns:CustomerSmallType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="getAccountByIdCustomerRsType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="1" minOccurs="1" name="transactionRs" type="pref:TransactionRsType">
+    			</xsd:element>
+    			<xsd:element maxOccurs="1" minOccurs="0" name="lstAccount" type="tns:LstAccountType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="CustomerSmallType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="1" minOccurs="0" name="id_type" type="xsd:string">
+    			</xsd:element>
+    			<xsd:element maxOccurs="1" minOccurs="0" name="id" type="xsd:string">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="LstAccountType">
+    		<xsd:sequence>
+    			<xsd:element maxOccurs="unbounded" minOccurs="0" name="account" type="pref2:AccountType">
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    </xsd:schema>

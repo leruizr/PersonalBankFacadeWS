@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.personabank.com/services/accounts/xsd/transactionRs" xmlns:pref="http://www.personabank.com/services/accounts/xsd/status" xmlns:this="http://www.personabank.com/services/accounts/xsd/transactionRs">
+	<xsd:import namespace="http://www.personabank.com/services/accounts/xsd/status" schemaLocation="StatusType.xsd"/>
+	<xsd:complexType name="TransactionRsType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="id_transaction" type="xsd:string">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="date_transaction" type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="status" type="pref:StatusType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.personabank.com/services/accounts/xsd/transactionRq" xmlns:this="http://www.personabank.com/services/accounts/xsd/transactionRq">
+    <xsd:complexType name="TransactionRqType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="id_transaction" type="xsd:string">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="date_transaction" type="xsd:dateTime">
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="client_id" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
